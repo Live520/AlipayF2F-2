@@ -19,7 +19,7 @@ $result = $aliPay->doPay();
 $result = $result['alipay_trade_precreate_response'];
 if($result['code'] && $result['code']=='10000'){
     //生成二维码
-    $url = 'http://pan.baidu.com/share/qrcode?w=300&h=300&url='.$result['qr_code'];
+    $url = 'http://qr.liantu.com/api.php?text='.$result['qr_code'];
     echo "<a href='{$result['qr_code']}'><img src='{$url}' style='width:300px;'></a>";
     #echo '二维码内容：'.$result['qr_code'];
     echo '如果手机不能正常付款，请点击二维码！';
